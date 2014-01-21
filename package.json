@@ -1,0 +1,29 @@
+{
+  "name": "bench-it",
+  "version": "0.0.0",
+  "description": "Benchmark your code",
+  "homepage": "https://github.com/tschaub/bench-it",
+  "author": {
+    "name": "Tim Schaub",
+    "url": "http://tschaub.net/"
+  },
+  "keywords": [
+    "benchmark",
+    "bench",
+    "test",
+    "time"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tschaub/bench-it.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tschaub/bench-it/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://tschaub.mit-license.org/"
+    }
+  ]
+}
