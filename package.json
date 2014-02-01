@@ -25,5 +25,9 @@
       "type": "MIT",
       "url": "http://tschaub.mit-license.org/"
     }
-  ]
+  ],
+  "dependencies": {
+    "optimist": "~0.6.0",
+    "glob": "~3.2.8"
+  }
 }
