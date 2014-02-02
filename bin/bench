@@ -8,10 +8,12 @@ var optimist = require('optimist');
 
 var runner = require('../lib/runner');
 
-var usage = 'Usage:\n    $0 [options] <files>\n\n' +
+var name = path.basename(__filename);
+
+var usage = 'Usage:\n    ' + name + ' [options] <files>\n\n' +
     'Examples:\n' +
-    'Run a single benchmark\n    $0 one-benchmark.js\n\n' +
-    'Run all *.js in the benchmarks directory\n    $0 benchmarks';
+    'Run a single benchmark\n    ' + name + ' one-benchmark.js\n\n' +
+    'Run all *.js in the benchmarks directory\n    ' + name + ' benchmarks';
 
 
 var argv = optimist.usage(usage)
