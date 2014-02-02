@@ -6,18 +6,23 @@ var path = require('path');
 var glob = require('glob');
 var optimist = require('optimist');
 
-var cli = require('../lib/cli');
+var runner = require('../lib/runner');
 
-var usage = '\nUsage:  $0 [options] <files>\n\n' +
+var usage = 'Usage:\n    $0 [options] <files>\n\n' +
     'Examples:\n' +
     'Run a single benchmark\n    $0 one-benchmark.js\n\n' +
-    'Run all *.js in the benchmarks directory\n    $0 benchmarks\n';
+    'Run all *.js in the benchmarks directory\n    $0 benchmarks';
 
 
 var argv = optimist.usage(usage)
+    .options('g', {
+      alias: 'glob',
+      describe: 'Glob pattern to match files in a directory ' +
+          '(should be quoted)',
+      default: '**/*.js'
+    })
     .demand(1)
     .argv;
-
 
 var items = argv._;
 var files = [];
@@ -25,7 +30,7 @@ var files = [];
 function gather(i) {
   var item = items[i];
   if (!item) {
-    return cli(argv, files);
+    return runner(files);
   }
   fs.stat(item, function(err, stats) {
     if (err) {
@@ -33,7 +38,7 @@ function gather(i) {
       process.exit(1);
     }
     if (stats.isDirectory()) {
-      glob('**/*.js'. {cwd: item}, function(err, matches) {
+      glob(argv.glob, {cwd: item}, function(err, matches) {
         files = files.concat(matches.map(function(match) {
           return path.join(item, match);
         }));
