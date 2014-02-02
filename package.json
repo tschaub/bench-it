@@ -29,5 +29,8 @@
   "dependencies": {
     "optimist": "~0.6.0",
     "glob": "~3.2.8"
+  },
+  "bin": {
+    "bench": "bin/bench"
   }
 }
