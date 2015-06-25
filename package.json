@@ -20,17 +20,19 @@
   "bugs": {
     "url": "https://github.com/tschaub/bench-it/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://tschaub.mit-license.org/"
-    }
-  ],
+  "license": "MIT",
   "dependencies": {
     "optimist": "~0.6.0",
     "glob": "~3.2.8"
   },
   "bin": {
     "bench": "bin/bench"
+  },
+  "scripts": {
+    "test": "eslint lib bin"
+  },
+  "devDependencies": {
+    "eslint": "^0.23.0",
+    "eslint-config-tschaub": "^1.0.0"
   }
 }
