@@ -23,7 +23,7 @@
   "license": "MIT",
   "dependencies": {
     "optimist": "~0.6.0",
-    "glob": "~3.2.8"
+    "glob": "~7.1.1"
   },
   "bin": {
     "bench": "bin/bench"
@@ -32,7 +32,7 @@
     "test": "eslint lib bin"
   },
   "devDependencies": {
-    "eslint": "^0.23.0",
-    "eslint-config-tschaub": "^1.0.0"
+    "eslint": "^3.14.0",
+    "eslint-config-tschaub": "^6.0.0"
   }
 }
