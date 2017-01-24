@@ -1,5 +1,7 @@
 # `bench-it`
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/tschaub/bench-it.svg)](https://greenkeeper.io/)
+
 Simple benchmark runner.
 
 ## Install
