@@ -1,36 +1,36 @@
 #!/usr/bin/env node
 
-var fs = require('fs');
-var path = require('path');
+const fs = require('fs');
+const path = require('path');
 
-var glob = require('glob');
-var optimist = require('optimist');
+const glob = require('glob');
+const optimist = require('optimist');
 
-var runner = require('../lib/runner');
+const runner = require('../lib/runner');
 
-var name = path.basename(__filename);
+const name = path.basename(__filename);
 
-var usage = 'Usage:\n    ' + name + ' [options] <files>\n\n' +
-    'Examples:\n' +
-    'Run a single benchmark\n    ' + name + ' one-benchmark.js\n\n' +
-    'Run all *.js in the benchmarks directory\n    ' + name + ' benchmarks';
+const usage = 'Usage:\n    ' + name + ' [options] <files>\n\n' +
+  'Examples:\n' +
+  'Run a single benchmark\n    ' + name + ' one-benchmark.js\n\n' +
+  'Run all *.js in the benchmarks directory\n    ' + name + ' benchmarks';
 
 
-var argv = optimist.usage(usage)
-    .options('g', {
-      alias: 'glob',
-      describe: 'Glob pattern to match files in a directory ' +
-          '(should be quoted)',
-      default: '**/*.js'
-    })
-    .demand(1)
-    .argv;
+const argv = optimist.usage(usage)
+  .options('g', {
+    alias: 'glob',
+    describe: 'Glob pattern to match files in a directory ' +
+      '(should be quoted)',
+    default: '**/*.js'
+  })
+  .demand(1)
+  .argv;
 
-var items = argv._;
-var files = [];
+const items = argv._;
+let files = [];
 
 function gather(i) {
-  var item = items[i];
+  let item = items[i];
   if (!item) {
     return runner(files);
   }
